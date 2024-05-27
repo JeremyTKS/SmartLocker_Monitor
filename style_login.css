@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-size: 16px; /* Base font size */
+}
+
+header {
+    text-align: center;
+    width: 100%;
+    background: none; /* Optional: Add a background to distinguish the header */
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 40px;
+    color: #fff;
+}
+
+header h2 {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(img/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    flex-direction: column; /* Align items vertically */
+}
+
+.box {
+    padding: 20px 30px;
+    max-width: 350px;
+    width: 90%;
+    backdrop-filter: blur(50px);
+    border-radius: 5px;
+    background: rgba(49, 49, 49, .2);
+    border: 1px solid rgba(255, 255, 255, .5);
+    font-size: inherit;
+}
+
+.box .form {
+    padding: 10px 20px;
+}
+
+.box .form h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 100px;
+    color: #fff;
+}
+
+.box .form form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box .form form .inputbox {
+    margin-bottom: 30px;
+    font-size: 20px; 
+    position: relative;
+}
+
+.box .form form .inputbox input {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid #ffffff;
+    color: #fff;
+    width: 80%;
+    font-size: 20px;
+}
+
+.box .form form .inputbox span {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    font-size: 25px;
+    color: #fff;
+}
+
+.box .form form .sub {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: #0cc0df;
+    cursor: pointer;
+    font-size: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.show-password {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+}
+
+.eye-icon {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    filter: invert(100%);
+}
+
+.show-password input[type="checkbox"] {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 35px;
+    }
+    header h2 {
+        font-size: 18px;
+    }
+    .box .form h2 {
+        font-size: 35px;
+    }
+    .box .form form .inputbox input {
+        font-size: 18px;
+    }
+    .box .form form .inputbox span {
+        font-size: 22px;
+    }
+    .box .form form .sub {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 30px;
+    }
+    header h2 {
+        font-size: 16px;
+    }
+    .box {
+        padding: 15px 25px;
+    }
+    .box .form h2 {
+        font-size: 30px;
+        margin-bottom: 80px;
+    }
+    .box .form form {
+        margin-top: 40px;
+    }
+    .box .form form .inputbox {
+        font-size: 18px;
+    }
+    .box .form form .inputbox input {
+        font-size: 18px;
+    }
+    .box .form form .inputbox span {
+        font-size: 20px;
+    }
+    .box .form form .sub {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 25px;
+    }
+    header h2 {
+        font-size: 14px;
+    }
+    .box {
+        padding: 10px 20px;
+        max-width: 300px;
+    }
+    .box .form h2 {
+        font-size: 25px;
+        margin-bottom: 60px;
+    }
+    .box .form form {
+        margin-top: 30px;
+    }
+    .box .form form .inputbox {
+        font-size: 16px;
+    }
+    .box .form form .inputbox input {
+        font-size: 16px;
+    }
+    .box .form form .inputbox span {
+        font-size: 18px;
+    }
+    .box .form form .sub {
+        font-size: 24px;
+    }
+    .eye-icon {
+        width: 30px;
+    }
+}
