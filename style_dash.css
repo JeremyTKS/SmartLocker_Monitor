@@ -1,0 +1,179 @@
+/* Reset CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #002D62;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Sidebar Title */
+.dashboard-title {
+    color: #fff;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style-type: none;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #F0F8FF;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    color: #000;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #B9D9EB;
+}
+
+/* Main Content Title */
+.main-content h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #72A0C1;
+}
+
+th {
+    background-color: #72A0C1;
+}
+
+/* Logout Button */
+.logout-button {
+    background-color: #F0F8FF;
+    color: #002D62;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    margin-top: auto;
+}
+
+.logout-button:hover {
+    background-color: #72A0C1;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-title {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+    .sidebar ul {
+        font-size: 18px;
+    }
+    .sidebar ul li {
+        margin-bottom: 15px;
+    }
+    .main-content h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 150px;
+        padding: 15px;
+    }
+    .dashboard-title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    .sidebar ul {
+        font-size: 16px;
+    }
+    .sidebar ul li {
+        margin-bottom: 10px;
+    }
+    .main-content h2 {
+        font-size: 20px;
+    }
+    .logout-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+    .dashboard-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .sidebar ul {
+        font-size: 14px;
+    }
+    .sidebar ul li {
+        margin-bottom: 8px;
+    }
+    .main-content {
+        padding: 15px;
+    }
+    .main-content h2 {
+        font-size: 18px;
+    }
+    table {
+        font-size: 14px;
+    }
+    th, td {
+        padding: 6px;
+    }
+    .logout-button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
