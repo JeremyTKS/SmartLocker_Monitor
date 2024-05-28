@@ -116,3 +116,49 @@ window.onload = () => {
     fetchData();
     setInterval(fetchData, 5000);  // Fetch data every 5000 milliseconds (5 seconds)
 };
+
+// Add event listener to export button
+const exportButton = document.getElementById('exportButton');
+exportButton.addEventListener('click', () => {
+    // Call a function to handle export logic
+    exportDataToCSV();
+});
+
+// Function to handle export logic
+function exportDataToCSV() {
+    // Convert dataCache to CSV format
+    const csvContent = convertDataToCSV(dataCache);
+
+    // Create a Blob object to store the CSV data
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+
+    // Create a link element to trigger download
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'history_data.csv';
+
+    // Simulate a click event to trigger download
+    link.click();
+}
+
+// Function to convert data to CSV format
+function convertDataToCSV(data) {
+    let csv = [];
+    // Add header row
+    csv.push('Date,User,Start Time,End Time,Duration,Locker,OTP');
+
+    // Add data rows
+    data.forEach(info => {
+        const dateOnly = info.dateTime.split(' ')[0];
+        const startTime = info.dateTime.split(' ')[1] || 'N/A';
+        const endTime = info.endtime || 'N/A';
+        const duration = info.duration || 'N/A';
+        const locker = info.Locker || 'N/A';
+        const otp = info.otp || 'N/A';
+
+        csv.push(`${dateOnly},${info.User},${startTime},${endTime},${duration},${locker},${otp}`);
+    });
+
+    // Join rows with newline character and return CSV data
+    return csv.join('\n');
+}

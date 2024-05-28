@@ -37,7 +37,7 @@ document.getElementById("login").addEventListener('click', async function(e){
         submitButton.disabled = false;
     } else {
         // Check if the entered password matches the one in the database
-        const passwordRef = ref(db, 'Admin/Password');
+        const passwordRef = ref(db, 'Admin/Security/Password');
         const passwordSnapshot = await get(passwordRef);
 
         if (passwordSnapshot.exists() && passwordSnapshot.val() === passwordInput.value) {

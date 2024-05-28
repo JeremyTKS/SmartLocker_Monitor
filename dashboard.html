@@ -14,6 +14,7 @@
                 <li><a href="#" class="sidebar-link" data-section="lockerCondition">Locker Condition</a></li>
                 <li><a href="#" class="sidebar-link" data-section="historyUser">History</a></li>
                 <li><a href="#" class="sidebar-link" data-section="analysis">Analysis</a></li>
+                <li><a href="#" class="sidebar-link" data-section="setting">Settings</a></li>
             </ul>
             <!-- Logout button -->
             <button id="logoutButton" class="logout-button">Logout</button>
@@ -51,15 +52,79 @@
                     <tbody id="historyTableBody">
                     </tbody>
                 </table>
-                <div>
+                <div class="table-controls">
                     <button id="prevPage" disabled>Previous</button>
                     <button id="nextPage" disabled>Next</button>
+                    <div class="export-table">
+                        <button id="exportButton" class="export-button">Export</button>
                 </div>
+
             </section>
-            <section id="analysis" class="dashboard-section" style="display: none;">
-                <h2>Analysis</h2>
-                <!-- Analysis content goes here -->
-            </section>
+            <section id="setting" class="dashboard-section" style="display: none;">
+                <h2>Settings</h2>
+            
+                <div class="settings-category">
+                    <h3>Admin Profile</h3>
+                    <div id="adminProfileView">
+                        <p><strong>Username:</strong> <span id="viewAdminUsername"></span></p>
+                        <p><strong>Email:</strong> <span id="viewAdminEmail"></span></p>
+                        <p><strong>Telephone Number:</strong> <span id="viewAdminPhone"></span></p>
+                        <button id="editProfileButton" class="edit-button">Edit</button>
+                    </div>
+                    <form id="adminProfileForm" style="display: none;">
+                        <label for="adminUsername">Username:</label>
+                        <input type="text" id="adminUsername" name="adminUsername">
+                        <label for="adminEmail">Email:</label>
+                        <input type="email" id="adminEmail" name="adminEmail">
+                        <label for="adminPhone">Telephone Number:</label>
+                        <input type="tel" id="adminPhone" name="adminPhone">
+                        <button type="submit">Save Changes</button>
+                        <button type="button" id="cancelEditProfileButton" class="cancel-button">Cancel</button>
+                    </form>
+                </div>
+            
+                <div class="settings-category">
+                    <h3>Security</h3>
+                    <div id="changePasswordView">
+                        <button id="changePasswordButton" class="edit-button">Change Password</button>
+                    </div>
+                    <form id="changePasswordForm" style="display: none;">
+                        <div class="input-container">
+                            <label for="currentPassword">Current Password:</label>
+                            <div class="password-input">
+                                <input type="password" id="currentPassword" name="currentPassword">
+                                <button type="button" id="toggleCurrentPasswordVisibility" class="visibility-button">Show</button>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label for="newPassword">New Password:</label>
+                            <div class="password-input">
+                                <input type="password" id="newPassword" name="newPassword">
+                                <button type="button" id="toggleNewPasswordVisibility" class="visibility-button">Show</button>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label for="confirmPassword">Confirm New Password:</label>
+                            <div class="password-input">
+                                <input type="password" id="confirmPassword" name="confirmPassword">
+                                <button type="button" id="toggleConfirmPasswordVisibility" class="visibility-button">Show</button>
+                            </div>
+                        </div>
+                        <button type="submit">Change Password</button>
+                        <button type="button" id="cancelChangePasswordButton" class="cancel-button">Cancel</button>
+                    </form>
+                </div>                                             
+
+                <div class="settings-category">
+                    <h3>Clear User History</h3>
+                    <button id="clearHistoryButton" class="clear-history-button">Clear History</button>
+                </div>                
+            
+                <div class="settings-category">
+                    <h3>System Reset</h3>
+                    <button id="resetSystemButton" class="reset-button">Reset System</button>
+                </div>
+            </section>   
         </main>
     </div>
 
@@ -67,6 +132,6 @@
     <script type="module" src="lockerCondition.js"></script>
     <script type="module" src="historyUser.js"></script>
     <script type="module" src="analysis.js"></script>
-    
+    <script type="module" src="setting.js"></script>
 </body>
 </html>

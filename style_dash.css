@@ -106,6 +106,188 @@ th {
     color: #fff;
 }
 
+/* Table Controls */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Export Button and Dropdown Styling */
+.export-table {
+    position: relative;
+    display: inline-block;
+}
+
+.export-button {
+    background-color: #72A0C1;
+    color: #FFF;
+    border: none;
+    padding: 10px 20px; /* Match the original size of the previous and next buttons */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.export-button:hover {
+    background-color: #002D62;
+}
+
+/* Show the dropdown menu on hover */
+.export-table:hover {
+    display: block;
+}
+
+/* Align Export Button to the Right */
+.table-controls .export-table {
+    margin-left: auto;
+}
+
+/* Ensure Previous and Next Buttons Keep Their Original Size */
+#prevPage, #nextPage {
+    padding: 10px 20px; /* Ensure this matches the original size */
+    background-color: #72A0C1;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#prevPage:hover, #nextPage:hover {
+    background-color: #002D62;
+}
+
+#prevPage:disabled, #nextPage:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Settings Section Styling */
+.settings-category {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #72A0C1;
+    border-radius: 5px;
+}
+
+.settings-category h3 {
+    font-size: 24px;
+    color: #002D62;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+.settings-category form {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-category label {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #002D62;
+}
+
+.settings-category input {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.settings-category button {
+    background-color: #72A0C1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.settings-category button:hover {
+    background-color: #002D62;
+}
+
+/* Edit and Cancel Buttons */
+.edit-button, .cancel-button {
+    background-color: #72A0C1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.edit-button:hover, .cancel-button:hover {
+    background-color: #002D62;
+}
+
+.cancel-button {
+    background-color: #F44336;
+}
+
+.cancel-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Align Labels and Inputs */
+#adminProfileForm label,
+#changePasswordForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#adminProfileForm input,
+#changePasswordForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.password-input {
+    position: absolute;
+    left: 180px;
+}
+
+.visibility-button {
+    position: absolute;
+    top: 50%;
+    left: 225px;
+    transform: translateY(-93%);
+}
+
+/* Reset Button */
+.reset-button {
+    background-color: #F44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.reset-button:hover {
+    background-color: #d32f2f;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .dashboard-title {
@@ -120,6 +302,19 @@ th {
     }
     .main-content h2 {
         font-size: 25px;
+    }
+    .settings-category h3 {
+        font-size: 22px;
+    }
+    .settings-category label {
+        font-size: 15px;
+    }
+    .settings-category input {
+        font-size: 15px;
+    }
+    .settings-category button {
+        font-size: 15px;
+        padding: 8px 16px;
     }
 }
 
@@ -144,6 +339,19 @@ th {
     .logout-button {
         font-size: 16px;
         padding: 8px 16px;
+    }
+    .settings-category h3 {
+        font-size: 20px;
+    }
+    .settings-category label {
+        font-size: 14px;
+    }
+    .settings-category input {
+        font-size: 14px;
+    }
+    .settings-category button {
+        font-size: 14px;
+        padding: 8px 14px;
     }
 }
 
@@ -181,5 +389,39 @@ th {
     .logout-button {
         font-size: 14px;
         padding: 6px 12px;
+    }
+    .settings-category {
+        padding: 15px;
+    }
+    .settings-category h3 {
+        font-size: 18px;
+    }
+    .settings-category label {
+        font-size: 13px;
+    }
+    .settings-category input {
+        font-size: 13px;
+        padding: 8px;
+    }
+    .settings-category button {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    .input-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .password-input {
+        position: absolute;
+        transform: translateY(70%);
+        left: 0;
+    }
+    .visibility-button {
+        position: absolute;
+        top: 40%;
+        left: 200px;
+        transform: translateY(-93%);
     }
 }
