@@ -11,21 +11,68 @@
         <aside class="sidebar">
             <h1 class="dashboard-title">Smart Locker Monitor</h1>
             <ul>
+                <li><a href="#" class="sidebar-link" data-section="homePage">Home</a></li>
                 <li><a href="#" class="sidebar-link" data-section="lockerCondition">Locker Condition</a></li>
+                <li><a href="#" class="sidebar-link" data-section="userData">User Data</a></li>
                 <li><a href="#" class="sidebar-link" data-section="historyUser">History</a></li>
                 <li><a href="#" class="sidebar-link" data-section="analysis">Analysis</a></li>
                 <li><a href="#" class="sidebar-link" data-section="setting">Settings</a></li>
             </ul>
-            <!-- Logout button -->
             <button id="logoutButton" class="logout-button">Logout</button>
         </aside>
         <main class="main-content">
-            <section id="lockerCondition" class="dashboard-section">
+
+            <section id="homePage" class="dashboard-section">
+                <div class="heading-logo-container">
+                    <div class="heading-content">
+                        <h2>Welcome to the Smart Locker Monitoring System</h2>
+                        <p>This is your dashboard where you can monitor and manage your locker system.</p>
+                    </div>
+                    <img src="img/logo.png" alt="Smart Locker Logo" class="logo-image">
+                </div>
+                <div class="image-container">
+                    <img src="img/locker.png" alt="Center Image" class="center-image">
+                </div>
+            </section>
+
+            <section id="lockerCondition" class="dashboard-section" style="display: none;">
                 <h2>Locker Condition</h2>
                 <div class="locker-container">
                     <canvas id="lockerCanvas" width="400" height="200"></canvas>
                 </div>
             </section>
+
+            <section id="userData" class="dashboard-section" style="display: none;">
+                <h2>User Data</h2>
+                <div>
+                    <label for="rowsPerPageUserData">Rows per page:</label>
+                    <select id="rowsPerPageUserData">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <table id="userDataTable">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userDataTableBody">
+                    </tbody>
+                </table>
+                <div class="table-controls">
+                    <button id="prevPageUserData" disabled>Previous</button>
+                    <button id="nextPageUserData" disabled>Next</button>
+                    <div class="export-table">
+                        <button id="exportButtonUserData" class="export-button">Export</button>
+                    </div>
+                </div>
+            </section>            
+
             <section id="historyUser" class="dashboard-section" style="display: none;">
                 <h2>History</h2>
                 <div>
@@ -57,9 +104,24 @@
                     <button id="nextPage" disabled>Next</button>
                     <div class="export-table">
                         <button id="exportButton" class="export-button">Export</button>
+                    </div>
                 </div>
-
             </section>
+
+            <section id="analysis" class="dashboard-section" style="display: none;">
+                <h2>Analysis</h2>
+                <div>
+                    <label for="dataType">Select Data Type:</label>
+                    <select id="dataType">
+                        <option value="lockerNumber">Locker Number</option>
+                        <option value="duration">Duration</option>
+                    </select>
+                </div>
+                <div class="chart-container">
+                    <canvas id="selectedChart" width="400" height="200"></canvas>
+                </div>
+            </section>                                            
+
             <section id="setting" class="dashboard-section" style="display: none;">
                 <h2>Settings</h2>
             
@@ -128,10 +190,13 @@
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="dashboard.js"></script>
     <script type="module" src="lockerCondition.js"></script>
+    <script type="module" src="userData.js"></script>
     <script type="module" src="historyUser.js"></script>
     <script type="module" src="analysis.js"></script>
     <script type="module" src="setting.js"></script>
+    
 </body>
 </html>

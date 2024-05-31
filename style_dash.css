@@ -106,6 +106,32 @@ th {
     color: #fff;
 }
 
+/* Homepage */
+#homePage {
+    text-align: center; /* Center align the content */
+}
+
+/* Heading and Logo Container */
+.heading-logo-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center align horizontally */
+    margin-bottom: 30px; /* Add spacing below the container */
+}
+
+.heading-logo-container h2 {
+    margin-right: 20px; /* Add spacing between heading and logo */
+}
+
+.logo-image {
+    width: 150px; /* Adjust the width of the logo image */
+}
+
+.center-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    margin-bottom: 20px; /* Add spacing below the centered image */
+}
+
 /* Table Controls */
 .table-controls {
     display: flex;
@@ -145,7 +171,7 @@ th {
 }
 
 /* Ensure Previous and Next Buttons Keep Their Original Size */
-#prevPage, #nextPage {
+#prevPage, #nextPage , #prevPageUserData, #nextPageUserData{
     padding: 10px 20px; /* Ensure this matches the original size */
     background-color: #72A0C1;
     color: white;
@@ -153,13 +179,19 @@ th {
     cursor: pointer;
 }
 
-#prevPage:hover, #nextPage:hover {
+#prevPage:hover, #nextPage:hover , #prevPageUserData:hover, #nextPageUserData:hover{
     background-color: #002D62;
 }
 
-#prevPage:disabled, #nextPage:disabled {
+#prevPage:disabled, #nextPage:disabled , #prevPageUserData:disabled, #nextPageUserData:disabled{
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+/* Chart Container */
+.chart-container {
+    margin: 20px auto; /* Center the chart container horizontally */
+    max-width: 600px; /* Set a maximum width for the chart container */
 }
 
 /* Settings Section Styling */
@@ -340,6 +372,20 @@ th {
         font-size: 16px;
         padding: 8px 16px;
     }
+    .heading-logo-container h2 {
+        font-size: 20px; /* Decrease font size for smaller screens */
+    }
+
+    .logo-image {
+        width: 100px; /* Decrease logo size for smaller screens */
+    }
+
+    .center-image {
+        margin-bottom: 10px; /* Decrease spacing below the centered image */
+    }
+    .chart-container {
+        max-width: 400px; /* Adjust maximum width for smaller screens */
+    }
     .settings-category h3 {
         font-size: 20px;
     }
@@ -389,6 +435,20 @@ th {
     .logout-button {
         font-size: 14px;
         padding: 6px 12px;
+    }
+    .heading-logo-container h2 {
+        font-size: 18px; /* Further decrease font size for smallest screens */
+    }
+
+    .logo-image {
+        width: 80px; /* Further decrease logo size for smallest screens */
+    }
+
+    .center-image {
+        margin-bottom: 5px; /* Further decrease spacing below the centered image */
+    }
+    .chart-container {
+        max-width: 300px; /* Further adjust maximum width for smallest screens */
     }
     .settings-category {
         padding: 15px;
