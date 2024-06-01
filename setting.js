@@ -198,7 +198,43 @@ function initializeSettings() {
         document.getElementById('confirmPassword').value = '';
     });
 
-    // Clear user history button click
+    // Clear User Data button click
+    document.getElementById('clearUserButton').addEventListener('click', function () {
+        if (confirm('Are you sure you want to clear all user data? This action cannot be undone.')) {
+            const storage = getStorage(app);
+            const userPhotoRef = storageRef(storage, 'User_Photo');
+            const croppedUserPhotoRef = storageRef(storage, 'Cropped');
+    
+            // Function to delete all items in a given reference
+            const deleteAllItemsInRef = (ref) => {
+                return listAll(ref).then((result) => {
+                    const deletionPromises = result.items.map((itemRef) => {
+                        return deleteObject(itemRef).then(() => {
+                            console.log('Photo deleted successfully');
+                        }).catch((error) => {
+                            console.error("Error deleting photo: ", error);
+                        });
+                    });
+                    return Promise.all(deletionPromises);
+                });
+            };
+    
+            // Delete photos from both directories
+            Promise.all([deleteAllItemsInRef(userPhotoRef), deleteAllItemsInRef(croppedUserPhotoRef)])
+                .then(() => {
+                    // Delete data from Firebase Realtime Database
+                    return remove(ref(database, 'User_Data'));
+                })
+                .then(() => {
+                    alert('User data cleared successfully!!');
+                })
+                .catch((error) => {
+                    console.error("Error clearing user data: ", error);
+                });
+        }
+    });
+
+    // Clear locker history button click
     document.getElementById('clearHistoryButton').addEventListener('click', function () {
         if (confirm('Are you sure you want to clear user history? This action cannot be undone.')) {
             remove(ref(db, 'History')).then(() => {

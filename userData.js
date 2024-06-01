@@ -96,16 +96,38 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchUserData();
 });
 
-// Function to export user data to CSV
+// Function to handle export logic
 function exportUserDataToCSV(userData) {
-    const csvContent = "data:text/csv;charset=utf-8,"
-        + userData.map(user => `${user.username},${user.phone},${user.email}`).join("\n");
-    
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "user_data.csv");
-    document.body.appendChild(link); // Required for FF
-    link.click();
+    // Convert dataCache to CSV format
+    const usercsvContent = convertUserDataToCSV(userData);
+
+    // Create a Blob object to store the CSV data
+    const userblob = new Blob([usercsvContent], { type: 'text/csv' });
+
+    // Create a link element to trigger download
+    const userlink = document.createElement('a');
+    userlink.href = URL.createObjectURL(userblob);
+    userlink.download = 'user_data.csv';
+
+    // Simulate a click event to trigger download
+    userlink.click();
 }
 
+// Function to convert data to CSV format
+function convertUserDataToCSV(data) {
+    let usercsv = [];
+    // Add header row
+    usercsv.push('Username, Phone Number, Email');
+
+    // Add data rows
+    data.forEach(user => {
+        const username = user.username || 'N/A';
+        const phone = user.phone || 'N/A';
+        const email = user.email || 'N/A';
+
+        usercsv.push(`${username},${phone},${email}`);
+    });
+
+    // Join rows with newline character and return CSV data
+    return usercsv.join('\n');
+}
