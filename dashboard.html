@@ -40,13 +40,13 @@
                 <div class="locker-container">
                     <canvas id="lockerCanvas" width="400" height="200"></canvas>
                 </div>
-            </section>
+            </section>           
 
             <section id="userData" class="dashboard-section" style="display: none;">
                 <h2>User Data</h2>
                 <div>
-                    <label for="rowsPerPageUserData">Rows per page:</label>
-                    <select id="rowsPerPageUserData">
+                    <label for="userRowsPerPage">Rows per page:</label>
+                    <select id="userRowsPerPage">
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
@@ -65,13 +65,13 @@
                     </tbody>
                 </table>
                 <div class="table-controls">
-                    <button id="prevPageUserData" disabled>Previous</button>
-                    <button id="nextPageUserData" disabled>Next</button>
+                    <button id="userPrevPage" disabled>Previous</button>
+                    <button id="userNextPage" disabled>Next</button>
                     <div class="export-table">
-                        <button id="exportButtonUserData" class="export-button">Export</button>
+                        <button id="userExportButton" class="export-button">Export</button>
                     </div>
                 </div>
-            </section>            
+            </section>                      
 
             <section id="historyUser" class="dashboard-section" style="display: none;">
                 <h2>History</h2>
@@ -193,8 +193,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="dashboard.js"></script>
     <script type="module" src="lockerCondition.js"></script>
-    <script type="module" src="userData.js"></script>
     <script type="module" src="historyUser.js"></script>
+    <script type="module" src="userData.js"></script> <!-- New Script -->
     <script type="module" src="analysis.js"></script>
     <script type="module" src="setting.js"></script>
     

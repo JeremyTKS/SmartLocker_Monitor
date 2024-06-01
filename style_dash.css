@@ -171,7 +171,7 @@ th {
 }
 
 /* Ensure Previous and Next Buttons Keep Their Original Size */
-#prevPage, #nextPage , #prevPageUserData, #nextPageUserData{
+#prevPage, #nextPage , #userPrevPage, #userNextPage{
     padding: 10px 20px; /* Ensure this matches the original size */
     background-color: #72A0C1;
     color: white;
@@ -179,11 +179,11 @@ th {
     cursor: pointer;
 }
 
-#prevPage:hover, #nextPage:hover , #prevPageUserData:hover, #nextPageUserData:hover{
+#prevPage:hover, #nextPage:hover , #userPrevPage:hover, #userNextPage:hover{
     background-color: #002D62;
 }
 
-#prevPage:disabled, #nextPage:disabled , #prevPageUserData:disabled, #nextPageUserData:disabled{
+#prevPage:disabled, #nextPage:disabled , #userPrevPage:disabled, #userNextPage:disabled{
     background-color: #ccc;
     cursor: not-allowed;
 }
