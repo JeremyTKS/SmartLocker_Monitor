@@ -41,7 +41,7 @@ document.getElementById("login").addEventListener('click', async function(e){
         const passwordSnapshot = await get(passwordRef);
 
         if (passwordSnapshot.exists() && passwordSnapshot.val() === passwordInput.value) {
-            alert("Password is correct! Proceed to Host Page.");
+            alert("Password is correct! Proceed to Admin Page.");
             // Password matches, you can proceed with your logic or redirect to another page
             window.location.href = 'dashboard.html';
         } else {
